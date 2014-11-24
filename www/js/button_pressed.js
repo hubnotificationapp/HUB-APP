@@ -1,0 +1,3 @@
+function beep() {
+            alert('ok');
+}

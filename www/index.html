@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notification Hub App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/app.min.css">
+    <style>
+      /* TODO */
+    </style>
+    <script type="text/javascript">
+      function start() {
+        alert('ok');
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <div class="app-page" data-page="sign_in_page">
+      <div class="app-topbar">
+        <div class="app-title"><span class="app-icon"></span>Sign-up for Hub Center</div>
+      	</div>
+      	<div class="app-content">
+      		<p class="app-section">Welcome to Sign-up page. To start using service, please, authorize it through your facebook account.</p>
+      		<div class="app-section">
+      			<div class="app-button" data-target="facebook_sing_in_page">sign-in facebook</div>
+      		</div>
+      		</div>
+    </div>
+
+    <div class="app-page" data-page="facebook_sing_in_page">
+      <div class="app-topbar">
+        <div class="app-title"><span class="app-icon"></span>Sign-in facebook account</div>
+      	</div>
+      	<div class="app-content">
+
+      	</div>
+    </div>
+
+    <div class="app-page" data-page="home2">
+      <div class="app-topbar">
+        <div class="app-title"><span class="app-icon"></span>Notification Hub Center</div>
+      </div>
+      <div class="app-content">
+          <p class="app-section">Welcome to your private notifications Hub. You can check your existing subscriptions, add new or unsubscribe boring ones. Manage it easily!</p>
+        <div class="app-section">
+          <div class="app-button" data-target="new_sub">Add new subscription</div>
+          <div class="app-button" data-target="unsub">Unsubscribe</div>
+          <div class="app-button" data-target="fav_page">Favorites</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-page" data-page="new_sub">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">Add new</div>
+      </div>
+      <div class="app-content">
+        <div class="app-section">
+          <input class="app-input" placeholder="Subject">
+          <textarea class="app-input" placeholder="Message"></textarea>
+          <div class="app-button">Send</div>
+        </div>
+        Page 2 is lonely
+      </div>
+    </div>
+
+        <div class="app-page" data-page="unsub">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">Unsubscribe</div>
+      </div>
+      <div class="app-content">
+        <div class="app-section">
+          <input class="app-input" placeholder="Subject">
+          <textarea class="app-input" placeholder="Message"></textarea>
+          <div class="app-button">Send</div>
+        </div>
+        Page 2 is lonely
+      </div>
+    </div>
+
+    <div class="app-page" data-page="fav_page">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">Favorites</div>
+      </div>
+      <div class="app-content">
+        <div class="app-section">
+          <input class="app-input" placeholder="Subject">
+          <textarea class="app-input" placeholder="Message"></textarea>
+          <div class="app-button">Send</div>
+        </div>
+        Page 2 is lonely
+      </div>
+    </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.min.js"></script>
+        <script type="text/javascript" src="js/zepto.js"></script>
+        <script type="text/javascript" src="js/button_pressed.js"></script>
+
+    <script>
+      App.controller('home', function (page) {
+        // put stuff here
+      });
+
+      App.controller('new_sub', function (page) {
+        // put stuff here
+      });
+
+      App.controller('unsub', function (page) {
+        // put stuff here
+      });
+
+
+      App.controller('fav_page', function (page) {
+        // put stuff here
+      });
+
+      App.controller('sign_in_page', function (page) {
+        // put stuff here
+      });
+
+      App.controller('facebook_sing_in_page', function (page) {
+        // put stuff here
+      });
+
+      try {
+        App.restore();
+      } catch (err) {
+        App.load('sign_in_page');
+      }
+    </script>
+  </body>
+</html>
