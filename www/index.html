@@ -18,23 +18,25 @@
 
     <div class="app-page" data-page="sign_in_page">
       <div class="app-topbar">
-        <div class="app-title"><span class="app-icon"></span>Sign-up for Hub Center</div>
+        <div class="app-title"><span class="app-icon"></span>Hub Notification Center</div>
       	</div>
       	<div class="app-content">
-      		<p class="app-section">Welcome to Sign-up page. To start using service, please, authorize it through your facebook account.</p>
+      		<p class="app-section">Welcome to Hub Notification Center management application. Forget about thousands of icons of different services: restoraunts, discounts and places. Now you can get latest news and events from on place.</p>
       		<div class="app-section">
-      			<div class="app-button" data-target="facebook_sing_in_page">sign-in facebook</div>
+      			<div class="app-button" data-target="facebook_sing_in_page">OK</div>
       		</div>
       		</div>
     </div>
 
     <div class="app-page" data-page="facebook_sing_in_page">
       <div class="app-topbar fbcolour">
-        <div class="app-title"><span class="app-icon"></span>Sign-in facebook account</div>
+        <div class="app-title"><span class="app-icon"></span>Sign in with Facebook account</div>
+        <div class="right app-button app-menu">Back?</div>
       	</div>
       	<div class="app-content">
-
-      	</div>
+          <div class="app-section">
+          <div class="app-button" data-target="new_sub">Get access to my dashboard</div>
+          </div>
     </div>
 
     <div class="app-page" data-page="home2">
@@ -101,6 +103,7 @@
         <script type="text/javascript" src="js/app.min.js"></script>
         <script type="text/javascript" src="js/zepto.js"></script>
         <script type="text/javascript" src="js/button_pressed.js"></script>
+        <script type="text/javascript" src="js/facebook-connect.js"></script>
 
     <script>
       App.controller('home', function (page) {
@@ -125,7 +128,20 @@
       });
 
       App.controller('facebook_sing_in_page', function (page) {
-        // put stuff here
+        $(page).find('.app-menu')
+          .on('click', function () {
+            App.dialog({
+              doButton     : 'Go to Welcome Hub Center' ,
+              cancelButton : 'Cancel'
+            }, function (choice) {
+              switch(choice) {
+                case 'do':
+                App.load('sign_in_page');
+                break;
+              }
+              console.log(choice);
+            });
+          });
       });
 
       try {
